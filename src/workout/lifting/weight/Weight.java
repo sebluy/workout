@@ -5,6 +5,8 @@ package workout.lifting.weight;
  */
 public abstract class Weight {
 
+    private static final int RESET_STEPS = 10 ;
+
     public static Weight newInstance(String name, double force) {
         switch (name) {
             case Plate.NAME: return new Plate(force) ;
@@ -30,13 +32,13 @@ public abstract class Weight {
     protected abstract void previous() ;
 
     public void reset() {
-        for (int i = 0 ; i < 10 ; i++) {
+        for (int i = 0 ; i < RESET_STEPS ; i++) {
             previous() ;
         }
     }
 
     public String toString() {
-        return mForce + " " + mUnit ;
+        return String.format("%.1f %s", mForce, mUnit) ;
     }
 
     public String getUnit() {
