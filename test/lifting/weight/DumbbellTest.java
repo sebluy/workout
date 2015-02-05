@@ -1,4 +1,4 @@
-package test.lifting.weight;
+package lifting.weight;
 
 import junit.framework.TestCase;
 import workout.lifting.weight.Dumbbell;
