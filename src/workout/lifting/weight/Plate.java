@@ -7,6 +7,8 @@ public class Plate extends Weight {
 
     public static final String NAME = "Plate" ;
     private static final String UNIT = "Plates" ;
+    private static final double MINIMUM = 1.0 ;
+    private static final double STEP = 0.5 ;
 
     public Plate(double force) {
         super(NAME, force, UNIT) ;
@@ -14,13 +16,13 @@ public class Plate extends Weight {
 
     @Override
     public void next() {
-        mForce += 0.5 ;
+        mForce += STEP ;
     }
 
     @Override
     protected void previous() {
-        if (mForce > 1) {
-            mForce -= 0.5 ;
+        if (mForce >= MINIMUM + STEP) {
+            mForce -= STEP ;
         }
     }
 
