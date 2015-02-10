@@ -7,6 +7,7 @@ public class CalfMachine extends Weight {
 
     public static final String NAME = "Calf Machine" ;
     private static final String UNIT = "lbs" ;
+    private static final int MINIMUM = 0 ;
 
     public CalfMachine(double force) {
         super(NAME, force, UNIT) ;
@@ -14,12 +15,14 @@ public class CalfMachine extends Weight {
 
     @Override
     public void next() {
-        mForce += 10 ;
+        mForce += 10.0 ;
     }
 
     @Override
     protected void previous() {
-        mForce -= 10 ;
+        if (mForce >= MINIMUM + 10.0) {
+            mForce -= 10.0 ;
+        }
     }
 
 }

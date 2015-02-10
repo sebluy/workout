@@ -9,7 +9,9 @@ public class DumbbellTest extends TestCase {
     public void testWeightNewInstance() {
         Weight weight = Weight.newInstance("Dumbbell", 45.0) ;
         assert(weight instanceof Dumbbell) ;
+        assertEquals("Dumbbell", weight.getName()) ;
         assertEquals(45.0, weight.getForce(), 0.01) ;
+        assertEquals("lbs", weight.getUnit()) ;
     }
 
     public void testNextWithLargeForce() {
