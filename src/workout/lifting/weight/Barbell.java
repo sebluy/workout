@@ -7,6 +7,7 @@ public class Barbell extends Weight {
 
     public static final String NAME = "Barbell" ;
     private static final String UNIT = "lbs" ;
+    private static int MINIMUM = 0 ;
 
     public Barbell(double force) {
         super(NAME, force, UNIT) ;
@@ -19,7 +20,7 @@ public class Barbell extends Weight {
 
     @Override
     protected void previous() {
-        if (mForce >= 45) {
+        if (mForce > MINIMUM) {
             mForce -= 2.5 ;
         }
     }

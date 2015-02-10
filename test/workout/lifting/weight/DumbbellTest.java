@@ -1,9 +1,16 @@
-package test.lifting.weight;
+package workout.lifting.weight;
 
 import junit.framework.TestCase;
 import workout.lifting.weight.Dumbbell;
+import workout.lifting.weight.Weight;
 
 public class DumbbellTest extends TestCase {
+
+    public void testWeightNewInstance() {
+        Weight weight = Weight.newInstance("Dumbbell", 45.0) ;
+        assert(weight instanceof Dumbbell) ;
+        assertEquals(45.0, weight.getForce(), 0.01) ;
+    }
 
     public void testNextWithLargeForce() {
         Dumbbell dumbbell = new Dumbbell(30.0) ;
