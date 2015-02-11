@@ -16,7 +16,7 @@ public enum Weights {
     private ForceController mController ;
 
     public static Weight newInstance(Weights weight, double force) {
-        return new BaseWeight(weight, force) ;
+        return new Weight(weight, force) ;
     }
 
     Weights(String name, String unit, ForceController controller) {

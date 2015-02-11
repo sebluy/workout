@@ -3,18 +3,38 @@ package workout.lifting.weight;
 /**
  * Created by sebluy on 1/29/15.
  */
-public interface Weight {
+public class Weight {
 
-    void next() ;
+    private Weights mWeight ;
+    private double mForce ;
 
-    void reset() ;
+    public Weight(Weights weight, double force) {
+        mWeight = weight ;
+        mForce = force ;
+    }
 
-    String toString() ;
+    public String toString() {
+        return String.format("%.1f %s", getForce(), getUnit()) ;
+    }
 
-    String getUnit() ;
+    public double getForce() {
+        return mForce ;
+    }
 
-    public String getName() ;
+    public void next() {
+        mForce = mWeight.next(mForce) ;
+    }
 
-    public double getForce() ;
+    public void reset() {
+        mForce = mWeight.reset(mForce) ;
+    }
+
+    public String getUnit() {
+        return mWeight.getUnit() ;
+    }
+
+    public String getName() {
+        return mWeight.getName() ;
+    }
 
 }

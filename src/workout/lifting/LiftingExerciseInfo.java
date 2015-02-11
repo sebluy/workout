@@ -1,7 +1,7 @@
 package workout.lifting;
 
 
-import workout.lifting.weight.BaseWeight;
+import workout.lifting.weight.Weight;
 
 /**
  * Created by sebluy on 12/20/14.
@@ -9,10 +9,10 @@ import workout.lifting.weight.BaseWeight;
 public class LiftingExerciseInfo {
 
     private String mName ;
-    private BaseWeight mWeight ;
+    private Weight mWeight ;
     private int mRepetitions ;
 
-    public LiftingExerciseInfo(String name, BaseWeight weight, int repetitions) {
+    public LiftingExerciseInfo(String name, Weight weight, int repetitions) {
         mName = name ;
         mWeight = weight ;
         mRepetitions = repetitions ;
@@ -39,7 +39,7 @@ public class LiftingExerciseInfo {
         return mRepetitions;
     }
 
-    public BaseWeight getWeight() {
+    public Weight getWeight() {
         return mWeight;
     }
 }

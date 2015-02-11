@@ -7,7 +7,5 @@ public class Dumbbell {
 
     public static final String NAME = "Dumbbell" ;
     public static final String UNIT = "lbs" ;
-    public static final int MINIMUM = 5 ;
-    public static final int MAXIMUM = 100 ;
 
 }

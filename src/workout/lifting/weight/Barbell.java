@@ -7,7 +7,7 @@ public class Barbell {
 
     public static final String NAME = "Barbell" ;
     public static final String UNIT = "lbs" ;
-    public static double MINIMUM = 0.0 ;
-    public static double STEP = 2.5 ;
+    public static final double MINIMUM = 0.0 ;
+    public static final double STEP = 2.5 ;
 
 }
