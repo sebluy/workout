@@ -3,3 +3,5 @@
 	- Refactor generator for CalisthenicWorkouts
 
 - Include run/swim
+
+- Refactor weight to use enum of different weights, with special case for dumbell, weight as an interface with baseweight, simple weight

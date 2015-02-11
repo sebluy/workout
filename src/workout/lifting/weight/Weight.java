@@ -3,54 +3,18 @@ package workout.lifting.weight;
 /**
  * Created by sebluy on 1/29/15.
  */
-public abstract class Weight {
+public interface Weight {
 
-    private static final int RESET_STEPS = 10 ;
+    void next() ;
 
-    public static Weight newInstance(String name, double force) {
-        switch (name) {
-            case Plate.NAME: return new Plate(force) ;
-            case MachineLBS.NAME: return new MachineLBS(force) ;
-            case CalfMachine.NAME: return new CalfMachine(force) ;
-            case Barbell.NAME: return new Barbell(force) ;
-            case Dumbbell.NAME: return new Dumbbell(force) ;
-            default: return null ;
-        }
-    }
+    void reset() ;
 
-    protected double mForce ;
-    private String mName ;
-    private String mUnit ;
+    String toString() ;
 
-    public Weight(String name, double force, String unit) {
-        mName = name ;
-        mForce = force ;
-        mUnit = unit ;
-    }
+    String getUnit() ;
 
-    public abstract void next() ;
-    protected abstract void previous() ;
+    public String getName() ;
 
-    public void reset() {
-        for (int i = 0 ; i < RESET_STEPS ; i++) {
-            previous() ;
-        }
-    }
-
-    public String toString() {
-        return String.format("%.1f %s", mForce, mUnit) ;
-    }
-
-    public String getUnit() {
-        return mUnit ;
-    }
-
-    public String getName() {
-        return mName ;
-    }
-
-    public double getForce() {
-        return mForce ;
-    }
+    public double getForce() ;
 
 }
