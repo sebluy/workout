@@ -15,8 +15,8 @@ public class CalisthenicWorkoutController implements WorkoutController {
     private CalisthenicWorkoutGenerator mGenerator ;
     private CalisthenicWorkoutStorage mStorage ;
 
-    public CalisthenicWorkoutController() {
-//        mStorage = new CalisthenicWorkoutJSONStorage() ;
+    public CalisthenicWorkoutController(CalisthenicWorkoutStorage storage) {
+        mStorage = storage ;
         mGenerator = new CalisthenicWorkoutGenerator(this) ;
     }
 
