@@ -4,10 +4,7 @@ import workout.BaseExerciseWorkout;
 import workout.Exercise;
 import workout.Workout;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Created by sebluy on 12/25/14.
@@ -31,7 +28,7 @@ public class CalisthenicWorkoutGenerator {
     private ArrayList<Exercise> generateExercises() {
 
         ArrayList<Exercise> exercises = new ArrayList<>() ;
-        ArrayList<Stack<Exercise>> sets = new ArrayList<>();
+        ArrayList<Queue<Exercise>> sets = new ArrayList<>();
 
         for (String type : mOrder) {
             sets.add(mExercises.get(type).generateUniqueSets());
@@ -43,9 +40,9 @@ public class CalisthenicWorkoutGenerator {
 
             /* add exercise from each set */
             for (int i = 0 ; i < sets.size() ; i++) {
-                Stack<Exercise> set = sets.get(i) ;
+                Queue<Exercise> set = sets.get(i) ;
                 if (!set.isEmpty()) {
-                    exercises.add(set.pop());
+                    exercises.add(set.remove());
                 } else {
                     empty.add(i) ;
                 }

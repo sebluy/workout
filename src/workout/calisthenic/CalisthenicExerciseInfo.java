@@ -2,9 +2,7 @@ package workout.calisthenic;
 
 import workout.Exercise;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Created by sebluy on 12/22/14.
@@ -23,15 +21,15 @@ public class CalisthenicExerciseInfo {
         mSets = sets ;
     }
 
-    public Stack<Exercise> generateUniqueSets() {
-        Stack<Exercise> exercises = new Stack<>() ;
+    public Queue<Exercise> generateUniqueSets() {
+        Queue<Exercise> exercises = new LinkedList<>() ;
         Stack<String> pool = new Stack<>() ;
         while (exercises.size() < mSets) {
             if (pool.isEmpty()) {
-                pool.addAll(mVariations) ;
+                pool.addAll(mVariations);
                 Collections.shuffle(pool);
             }
-            exercises.push(new CalisthenicExercise(pool.pop(), mRepetitions)) ;
+            exercises.add(new CalisthenicExercise(pool.pop(), mRepetitions)) ;
         }
         return exercises ;
     }
