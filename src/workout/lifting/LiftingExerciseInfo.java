@@ -26,6 +26,7 @@ public class LiftingExerciseInfo {
         int performedRepetitions = exercise.getPerformedRepetitions() ;
         if (performedRepetitions > 2) {
             mRepetitions = performedRepetitions - 2 ;
+            mWeight.next() ;
         } else if (performedRepetitions > 0) {
             mRepetitions = 1 ;
             mWeight.next() ;
